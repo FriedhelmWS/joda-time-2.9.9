@@ -366,6 +366,7 @@ public class TestPartial_Constructors extends TestCase {
             fail();
         } catch (IllegalArgumentException ex) {
             assertMessageContains(ex, "must not", "duplicate");
+            assertMessageContains(ex, "year and year");
         }
         
         types = new DateTimeFieldType[] {
@@ -375,6 +376,7 @@ public class TestPartial_Constructors extends TestCase {
             fail();
         } catch (IllegalArgumentException ex) {
             assertMessageContains(ex, "must not", "duplicate");
+            assertMessageContains(ex, "era and era");
         }
         
         types = new DateTimeFieldType[] {
@@ -384,6 +386,7 @@ public class TestPartial_Constructors extends TestCase {
             fail();
         } catch (IllegalArgumentException ex) {
             assertMessageContains(ex, "must not", "duplicate");
+            assertMessageContains(ex, "dayOfMonth and dayOfMonth");
         }
         
         types = new DateTimeFieldType[] {
@@ -393,6 +396,7 @@ public class TestPartial_Constructors extends TestCase {
             fail();
         } catch (IllegalArgumentException ex) {
             assertMessageContains(ex, "must not", "duplicate");
+            assertMessageContains(ex, "clockhourOfDay and hourOfDay");
         }
     }
 
