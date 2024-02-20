@@ -910,6 +910,15 @@ public class TestDateTime_Basics extends TestCase {
             fail();
         } catch (IllegalArgumentException ex) {}
     }
+
+    public void testWithTimeAtStartOfDay() {
+        DateTime test = new DateTime(2024, 2, 11, 7, 8, 9, 0);
+        DateTime result = test.withTimeAtStartOfDay();
+        DateTime expected = new DateTime(2024, 2, 11, 0, 0, 0, 0);
+
+        assertNotNull(result);
+        assertEquals(expected, result);
+    }
     
     @SuppressWarnings("deprecation")
     public void testWithFields_RPartial() {
